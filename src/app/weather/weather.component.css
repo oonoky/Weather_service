@@ -1,0 +1,14 @@
+.mycontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    margin: 5px;
+}
+
+.myRadioButtons {
+    display: flex;
+    justify-content: space-around;
+}
