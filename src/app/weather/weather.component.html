@@ -1,15 +1,27 @@
+<!-- weather.component.html -->
+
+<style>
+  .weather-container {
+    background-image: url('./../../assets/images.jpg');
+    background-size: cover;
+    /* Other styles for your container */
+  }
+</style>
+
 <div class="weather-container">
-    <h2 class="weather-heading">Weather App</h2>
-    <form (ngSubmit)="getWeather()" class="weather-form">
-      <input type="text" placeholder="Enter city name" [(ngModel)]="cityName" name="cityName" class="weather-input" required>
-      <button type="submit" class="weather-button" >Get Weather</button>
-    </form>
-    <div *ngIf="weatherData" class="weather-info">
-      <h3 class="city-name">{{ weatherData.name }}, {{ weatherData.sys.country }}</h3>
-      <p class="temperature">Temperature: {{ weatherData.main.temp }}°C</p>
-      <p class="humidity">Humidity: {{ weatherData.main.humidity }}%</p>
-      <p class="wind-speed">Wind Speed: {{ weatherData.wind.speed }} m/s</p>
-    </div>
+  <h1 class="weather-heading">Weather App</h1>
+  <form (ngSubmit)="getWeather()" class="weather-form">
+    <input type="text" placeholder="Enter city name" [(ngModel)]="cityName" name="cityName" class="weather-input" required>
+    <button type="submit" class="weather-button">Get Weather</button>
+  </form>
+  <div *ngIf="weatherData" class="weather-info">
+    <h3 class="city-name">{{ weatherData?.city }}</h3>
+    <p class="temperature">Temperature: {{ weatherData?.temperature }}°C</p>
+    <p class="humidity">Humidity: {{ weatherData?.humidity }}%</p>
+    <p class="description">Description: {{ weatherData?.description }}</p>
+    <p class="wind-speed">Wind Speed: {{ weatherData?.windSpeed }} m/s</p>
   </div>
+</div>
+
   
   

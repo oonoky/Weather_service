@@ -1,3 +1,4 @@
+// weather.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -6,14 +7,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WeatherService {
-  private apiKey = '5cad434697f1def9900049dc08df685a'; // Replace 'YOUR_API_KEY' with your actual API key
-  private apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+  private apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
+  private apiUrl = 'http://localhost:4000/graphql'; // Assuming Apollo Server runs on this URL
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getweather(city: string, units: string): Observable<any> {
-    const url = `${this.apiUrl}?q=${city}&appid=${this.apiKey}&units=${units}`;
-    return this.http.get(url);
+  getWeatherByCity(city: string): Observable<any> {
+    const query = `{
+      getWeatherByCityName(city: "${city}") {
+        city
+        temperature
+        description
+      }
+    }`;
+    return this.http.post(this.apiUrl, { query });
   }
 }
-

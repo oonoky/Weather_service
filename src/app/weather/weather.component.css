@@ -1,60 +1,66 @@
 .weather-container {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #0fe1e8;
-  }
-  
-  .weather-heading {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .weather-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .weather-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 70%;
-  }
-  
-  .weather-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .weather-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .weather-info {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-  }
-  
-  .city-name {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .temperature,
-  .humidity,
-  .wind-speed {
-    margin-bottom: 5px;
-  }
-    
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.9); /* Изменено на прозрачный белый цвет */
+  box-shadow: 0 0 10px rgba(255, 253, 253, 0.1); /* Добавлен тень */
+}
+
+.weather-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffffff; /* Цвет заголовка */
+}
+
+.weather-form {
+  margin-bottom: 20px;
+}
+
+.weather-input {
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  width: 70%;
+  transition: border-color 0.3s; /* Анимация изменения цвета границы при фокусе */
+}
+
+.weather-input:focus {
+  border-color: #1cc2a1; /* Изменение цвета границы при фокусе */
+}
+
+.weather-button {
+  padding: 10px 20px;
+  background-color: #1cc2a1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.weather-button:hover {
+  background-color: #14a38b; /* Изменение цвета кнопки при наведении */
+}
+
+.weather-info {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgba(181, 181, 181, 0.8); /* Прозрачный белый фон */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+.city-name {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffffff; /* Цвет названия города */
+}
+
+.temperature,
+.humidity,
+.wind-speed {
+  margin-bottom: 5px;
+  color: #ffffff; /* Цвет текста данных о погоде */
+}
